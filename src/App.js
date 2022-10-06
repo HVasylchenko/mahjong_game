@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import RandomArr from "./components/RandomArr";
 
 function App() {
+  
+  function getRandomArr(min, max, lenght) {
+    let arr = [];
+    let number;
+    while (arr.length < lenght / 2) {
+      number = Math.floor(Math.random() * (max - min + 1) + min);
+      if (arr.indexOf(number) === -1) {
+        arr.push(number);
+      }
+    }
+    return [...arr, ...arr].sort(() => Math.random() - 0.5);
+  }
+
+  const array = getRandomArr(1, 60, 32);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="title">Mahjong</h1>
+        <RandomArr array={array} />
     </div>
   );
 }
