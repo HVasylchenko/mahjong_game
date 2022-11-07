@@ -43,3 +43,14 @@
   align-items: center;
   color: #0a0a0c;
 }
+
+h3 {
+  margin: 10px 40px;
+}
+
+.buttonStart {
+  font-size: 24px;
+  margin: 10px 45%;
+  border: 2px solid black;
+  border-radius: 4px;
+}
